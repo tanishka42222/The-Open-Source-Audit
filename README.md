@@ -3,7 +3,6 @@
 **Registration Number:** 24BCE11422
 **Course:** CSE0002 — Open Source Software | VIT Bhopal University  
 **Software Audited:** Firefox Web Browser (Mozilla Public License 2.0)  
-**Repository:** `oss-audit-24BSA10141`
 
 ---
 
