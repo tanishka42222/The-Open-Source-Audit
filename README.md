@@ -1,0 +1,105 @@
+OSS Audit — Linux Kernel
+
+Student Name: Tanishka Sharma
+Registration Number: 24BCE11422
+Course: CSE0002 — Open Source Software | VIT Bhopal University
+Software Audited: Linux Kernel (GNU General Public License v2)
+Repository: oss-audit-24BCE11422
+
+About This Project
+
+This repository contains five shell scripts for the Open Source Software Capstone Project — The Open Source Audit. The project audits the Linux Kernel, examining its origin (Linus Torvalds, 1991), GNU General Public License (GPLv2), philosophy, Linux system footprint, FOSS ecosystem, and a comparison with proprietary alternatives (Microsoft Windows Server).
+
+Repository Contents
+File	Description
+script1_system_identity.sh	Displays system info: distro, kernel, uptime, user, and GPLv2 license details
+script2_package_inspector.sh	Checks if a FOSS package is installed, shows version/metadata, and prints a philosophy note
+script3_disk_permission_auditor.sh	Audits system directories: permissions, ownership, and disk usage
+script4_log_analyzer.sh	Reads a log file, counts keyword matches, and shows last 5 matches
+script5_manifesto_generator.sh	Generates and saves a personalised open-source manifesto
+README.md	Project documentation
+
+The project report PDF is submitted separately via the VITyarthi portal.
+
+Environment Requirements
+OS: Ubuntu 22.04 / 24.04 LTS or any Debian-based Linux
+Shell: Bash (version 4.0+)
+Dependencies: uname, whoami, uptime, dpkg, apt-cache, ls, du, grep, awk, cut, date
+Optional: linux-image packages for kernel inspection
+Permissions: Script 4 may require sudo to access /var/log/syslog
+Setup Instructions
+Step 1 — Clone the repository
+git clone https://github.com/[your-github-username]/oss-audit-24BCE11422.git
+cd oss-audit-24BCE11422
+Step 2 — Make scripts executable
+chmod +x *.sh
+Running Each Script
+Script 1 — System Identity Report
+
+Displays system information and Linux kernel details.
+
+./script1_system_identity.sh
+
+Expected output: Distribution name, kernel version, uptime, user info, date/time, and GPLv2 license.
+
+Script 2 — FOSS Package Inspector
+
+Checks if a package is installed and prints a philosophy note.
+
+# Default package
+./script2_package_inspector.sh
+
+# Custom packages
+./script2_package_inspector.sh bash
+./script2_package_inspector.sh linux-base
+./script2_package_inspector.sh python3
+
+Expected output: Installation status, version, and open-source philosophy note.
+
+Script 3 — Disk and Permission Auditor
+
+Audits important system directories.
+
+./script3_disk_permission_auditor.sh
+
+Expected output: Table of directories with permissions, owner, group, and size. Includes /etc, /var/log, /proc, /sys, etc.
+
+Script 4 — Log File Analyzer
+
+Reads log files and counts keyword matches.
+
+# Default example
+sudo ./script4_log_analyzer.sh /var/log/syslog error
+
+# Custom keyword
+sudo ./script4_log_analyzer.sh /var/log/syslog kernel
+
+Expected output: Total lines, match count, percentage, and last 5 matching lines.
+
+Note: You may need sudo or adm group access:
+sudo usermod -aG adm $USER
+
+Script 5 — Open Source Manifesto Generator
+
+Interactive script that creates a personal manifesto.
+
+./script5_manifesto_generator.sh
+
+Follow prompts:
+
+Tool you use daily
+Meaning of freedom
+Something you would build
+
+Expected output: Manifesto saved as manifesto_[username].txt.
+
+Troubleshooting
+Issue	Solution
+Permission denied	Run chmod +x scriptname.sh
+Command not found	Install missing package using apt
+Script 4 cannot read logs	Use sudo or join adm group
+dpkg not found	Use equivalent tool (rpm -qa)
+Script outputs nothing	Ensure Bash shell (/bin/bash)
+License
+
+This project is created for educational purposes as part of the VIT Bhopal OSS course. It may be freely used and modified.
