@@ -65,7 +65,7 @@ Audits important system directories.
 Expected output: Table of directories with permissions, owner, group, and size. Includes /etc, /var/log, /proc, /sys, etc.
 
 Script 4 — Log File Analyzer
-
+          
 Reads log files and counts keyword matches.
 
 # Default example
